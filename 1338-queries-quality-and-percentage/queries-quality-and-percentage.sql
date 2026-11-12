@@ -10,7 +10,7 @@ FROM Queries
 
 ),
 
-quality as (
+quality_rating as (
 
 SELECT 
     query_name,
@@ -25,21 +25,4 @@ SELECT
     query_name,
     ROUND(quality, 2) as quality,
     ROUND(poor_query_percentage, 2) as poor_query_percentage
-FROM quality
-
-
-/*),
-
-poor_query_percentage as (
-    
-    SELECT
-
-    query_name,
-    quality,
-    poor_query,
-    result,
-    SUM(poor_query)/COUNT(result)*100 as poor_query_percentage
-
-    FROM quality
-    GROUP BY query_name
-)*/
+FROM quality_rating
